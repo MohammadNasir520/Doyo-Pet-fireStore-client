@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-import { updateUserById } from '../../api/userApi';
+import { addUser, updateUserById } from '../../api/userApi';
 
 const AddUser = () => {
 
@@ -14,17 +14,17 @@ const AddUser = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const age = form.age.value;
+        const age = parseInt(form.age.value);
         const location = form.location.value;
 
         const newUser = { name, email, age, location }
         console.log(newUser)
 
-            (newUser)
+        addUser(newUser)
             .then(data => {
                 console.log(data)
-                if (data.updateUser.modifiedCount) {
-                    toast.success(`${name} updated successfully`)
+                if (data.acknowledged) {
+                    toast.success(`${name} Added successfully`)
                     navigate("/")
                 }
             })

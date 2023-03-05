@@ -1,3 +1,16 @@
+// update single user by id 
+export const addUser = async (user) => {
+    const res = await fetch(`http://localhost:3000/users/add`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+    const data = await res.json()
+    return data;
+}
+
 
 // get all user
 export const getAllUser = async () => {
