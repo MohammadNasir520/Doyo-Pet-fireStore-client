@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
 
             {
                 path: "/editUser/:id",
-                loader: ({ params }) => fetch(`https://doyo-pet-fire-store.vercel.app/users/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:3000/users/get/${params.id}`),
                 element: <EditUser />
             },
         ]

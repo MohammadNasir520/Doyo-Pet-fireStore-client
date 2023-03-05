@@ -2,7 +2,7 @@
 // get all user
 export const getAllUser = async () => {
 
-    const res = await fetch(`https://doyo-pet-fire-store.vercel.app/users`)
+    const res = await fetch(`http://localhost:3000/users/getUsers`)
     const data = await res.json()
     return data;
 
@@ -11,7 +11,7 @@ export const getAllUser = async () => {
 
 // update single user by id 
 export const updateUserById = async (user, id) => {
-    const res = await fetch(`https://doyo-pet-fire-store.vercel.app/users/${id}`, {
+    const res = await fetch(`http://localhost:3000/users/update/${id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -24,7 +24,7 @@ export const updateUserById = async (user, id) => {
 
 // delete single userBy id
 export const deleteUserById = async (id) => {
-    const res = await fetch(`https://doyo-pet-fire-store.vercel.app/users/${id}`, {
+    const res = await fetch(`http://localhost:3000/users/delete/${id}`, {
         method: 'DELETE'
 
     })
