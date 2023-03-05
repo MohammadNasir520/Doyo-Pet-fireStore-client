@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { deleteUserById, getAllUser } from '../../api/userApi';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Home = () => {
 
@@ -40,7 +41,7 @@ const Home = () => {
 
         <div>
 
-            {/* <p className='text-3xl font-bold text-center my-2'>Doyo Pet Care</p> */}
+            <Navbar></Navbar>
 
             <div className='grid place-items-center md:grid-cols-3 lg:grid-cols-4 min-h-screen gap-3 mt-1 p-3'>
                 {
